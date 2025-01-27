@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alpine.js Crash Course</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="index.js"></script>
+</head>
+<body>
+  
+  <!-- <div x-data="{ count: 0, name: 'Mario' }">
+    <h1>Hi, <span x-text="name"></span></h1>
+    <p>The current value of the count is: <span x-text="count"></span></p>
+    <button x-on:click="count++">Increase count by 1</button>
+  </div> -->
+
+  <div x-data="counter">
+    <h1>Hi, <span x-text="name"></span></h1>
+    <p>The current value of the count is: <span x-text="count"></span></p>
+    <button x-on:click="count++">Increase count by 1</button>
+    <button x-on:click="logCount">Log the count</button>
+  </div>
+
+</body>
+</html>
