@@ -10,18 +10,68 @@
 </head>
 <body>
   
-  <!-- <div x-data="{ count: 0, name: 'Mario' }">
-    <h1>Hi, <span x-text="name"></span></h1>
-    <p>The current value of the count is: <span x-text="count"></span></p>
-    <button x-on:click="count++">Increase count by 1</button>
-  </div> -->
+  <form>
+    <h1>Ninja Signup Form</h1>
 
-  <div x-data="counter">
-    <h1>Hi, <span x-text="name"></span></h1>
-    <p>The current value of the count is: <span x-text="count"></span></p>
-    <button x-on:click="count++">Increase count by 1</button>
-    <button x-on:click="logCount">Log the count</button>
-  </div>
+    <!-- username -->
+    <div class="form-field">
+      <label>
+        <span></span>Username:
+        <input 
+          type="text" 
+          maxlength="15">
+      </label>
+    </div>
+
+    <!-- password -->
+    <div class="form-field password">
+      <label>
+        <span>Password:</span>
+        <input type="password">
+      </label>
+    </div>
+
+    <!-- confirm password -->
+    <div class="form-field">
+      <label>
+        <span>Confirm Password:</span>
+        <input type="password">
+      </label>
+    </div>
+
+    <!-- belt color -->
+    <div class="form-field">
+      <label>Belt Color:
+        <select>
+          <option value="">Select a belt</option>
+          <option value="black">Black</option>
+          <option value="white">White</option>
+          <option value="red">Red</option>
+          <option value="orange">Orange</option>
+          <option value="brown">Brown</option>
+        </select>
+      </label>
+    </div>
+
+    <!-- short bio -->
+    <div class="form-field">
+      <label>
+        <span>Short Bio:</span>
+        <textarea maxlength="100"></textarea>
+      </label>
+    </div>
+
+    <!-- newsletter signup -->
+    <div class="form-field newsletter">
+      <label>
+        <input type="checkbox">
+        <span>Sign up for the newsletter</span>
+      </label>
+    </div>
+
+    <!-- submit button -->
+    <button type="submit">Submit</button>
+  </form>
 
 </body>
 </html>
