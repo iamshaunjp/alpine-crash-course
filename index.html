@@ -10,39 +10,43 @@
 </head>
 <body>
   
-  <form>
+  <form x-data="signupForm">
     <h1>Ninja Signup Form</h1>
 
     <!-- username -->
     <div class="form-field">
       <label>
         <span></span>Username:
-        <input 
+        <input
+          x-model="username" 
           type="text" 
           maxlength="15">
       </label>
+      <div x-text="username"></div>
     </div>
 
     <!-- password -->
     <div class="form-field password">
       <label>
         <span>Password:</span>
-        <input type="password">
+        <input type="password" x-model="password">
       </label>
+      <div x-text="password"></div>
     </div>
 
     <!-- confirm password -->
     <div class="form-field">
       <label>
         <span>Confirm Password:</span>
-        <input type="password">
+        <input type="password" x-model="passwordConfirm">
       </label>
+      <div x-text="passwordConfirm"></div>
     </div>
 
     <!-- belt color -->
     <div class="form-field">
       <label>Belt Color:
-        <select>
+        <select x-model="belt">
           <option value="">Select a belt</option>
           <option value="black">Black</option>
           <option value="white">White</option>
@@ -51,22 +55,25 @@
           <option value="brown">Brown</option>
         </select>
       </label>
+      <div x-text="belt"></div>
     </div>
 
     <!-- short bio -->
     <div class="form-field">
       <label>
         <span>Short Bio:</span>
-        <textarea maxlength="100"></textarea>
+        <textarea maxlength="100" x-model="bio"></textarea>
       </label>
+      <div x-text="bio"></div>
     </div>
 
     <!-- newsletter signup -->
     <div class="form-field newsletter">
       <label>
-        <input type="checkbox">
+        <input type="checkbox" x-model="newsletter">
         <span>Sign up for the newsletter</span>
       </label>
+      <div x-text="newsletter"></div>
     </div>
 
     <!-- submit button -->
