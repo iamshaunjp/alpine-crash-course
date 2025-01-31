@@ -13,11 +13,6 @@
   <form x-data="signupForm" @submit.prevent="submitForm">
     <h1>Ninja Signup Form</h1>
 
-    <button type="button" x-on:click.shift="console.log('click')">click</button>
-    <button type="button" x-on:mouseleave.ctrl="console.log('mouseleave')">mouseleave</button>
-    <button type="button" x-on:dblclick="console.log('dblclick')">dblclick</button>
-    <input type="text" @keyup="console.log('keyup')">
-
     <!-- username -->
     <div class="form-field">
       <p class="hint" :class="{'warning': username.length > 10}">
@@ -37,8 +32,12 @@
     <div class="form-field password">
       <label>
         <span>Password:</span>
-        <input type="password" x-model="password">
+        <input :type="showPass ? 'text' : 'password'" x-model="password">
       </label>
+
+      <button type="button" @click="showPass = !showPass">
+        <span x-text="showPass ? 'Hide' : 'Show'"></span>
+      </button>
     </div>
 
     <!-- confirm password -->
