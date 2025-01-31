@@ -31,18 +31,9 @@ document.addEventListener('alpine:init', () => {
 
     submitForm($event) {
       this.validateForm()
-      console.log(this.errors)
 
       if (Object.keys(this.errors).length === 0) {
         console.log(this.username, this.password, this.belt, this.bio, this.newsletter)
-
-        // reset form fields
-        // this.username = ''
-        // this.password = ''
-        // this.passwordConfirm = ''
-        // this.belt = ''
-        // this.bio = ''
-        // this.newsletter = false
 
         $event.target.reset()
       }
