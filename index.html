@@ -10,111 +10,25 @@
 </head>
 <body>
 
-  <form x-data="signupForm" @submit.prevent="submitForm">
-    <h1>Ninja Signup Form</h1>
-
-    <!-- username -->
-    <div class="form-field">
-      <p class="hint" :class="{'warning': username.length > 10}">
-        <span x-text="15 - username.length"></span> characters remaining
-      </p>
-
-      <label>
-        <span></span>Username:
-        <input
-          x-model="username" 
-          type="text" 
-          maxlength="15">
-      </label>
-
-      <template x-if="errors.username">
-        <p class="error" x-text="errors.username"></p>
-      </template>
+  <div x-data="demo">
+  
+    <!-- fetching data with init -->
+    <div>
+      <h3>Posts:</h3>
+      <ul>
+        <template x-for="post in posts" :key="post.id">
+          <li x-text="post.title"></li>
+        </template>
+      </ul>
+    </div>
+  
+    <!-- $watch example -->
+    <div>
+      <h3>Change the Background:</h3>
+      <input type="text" x-model="bg" placeholder="Enter a bg colour" />
     </div>
 
-    <!-- password -->
-    <div class="form-field password">
-      <label>
-        <span>Password:</span>
-        <input :type="showPass ? 'text' : 'password'" x-model="password">
-      </label>
-
-      <button type="button" @click="showPass = !showPass">
-        <span x-text="showPass ? 'Hide' : 'Show'"></span>
-      </button>
-
-      <template x-if="errors.password">
-        <p class="error" x-text="errors.password"></p>
-      </template>
-    </div>
-
-    <!-- confirm password -->
-    <div class="form-field">
-      <label>
-        <span>Confirm Password:</span>
-        <input type="password" x-model="passwordConfirm">
-      </label>
-
-      <template x-if="errors.passwordConfirm">
-        <p class="error" x-text="errors.passwordConfirm"></p>
-      </template>
-    </div>
-
-    <!-- belt color -->
-    <div class="form-field">
-      <label>Belt Color:
-        <select x-model="belt">
-          <option value="">Select a belt</option>
-          <template x-for="(choice, index) in beltChoices" :key="choice">
-            <option :value="choice" x-text="choice"></option>
-          </template>
-        </select>
-      </label>
-
-      <template x-if="errors.belt">
-        <p class="error" x-text="errors.belt"></p>
-      </template>
-    </div>
-
-    <!-- short bio -->
-    <div class="form-field">
-      <p class="hint" :class="{'warning': bio.length > 90}">
-        <span x-text="100 - bio.length"></span> characters remaining
-      </p>
-
-      <label>
-        <span>Short Bio:</span>
-        <textarea maxlength="100" x-model="bio"></textarea>
-      </label>
-
-      <template x-if="errors.bio">
-        <p class="error" x-text="errors.bio"></p>
-      </template>
-    </div>
-
-    <!-- newsletter signup -->
-    <div class="form-field newsletter">
-      <label>
-        <input type="checkbox" x-model="newsletter">
-        <span>Sign up for the newsletter</span>
-      </label>
-    </div>
-
-    <!-- submit button -->
-    <button type="submit">Submit</button>
-
-    <div x-show="success" class="overlay" x-cloak
-      x-transition.opacity.duration.500ms
-    >
-      <div class="modal" x-show="success"
-        x-transition:enter-start="off-screen"
-        x-transition:enter-end="on-screen"
-      >
-        <h2>Thank you!</h2>
-        <button type="button" @click="success = false">Close</button>
-      </div>
-    </div>
-  </form>
+  </div>
 
 </body>
 </html>

@@ -145,3 +145,8 @@ button[type="submit"] {
 .modal.off-screen {
   transform: translateY(-100vh);
 }
+body {
+  width: 90%;
+  max-width: 640px;
+  margin: 50px auto;
+}
