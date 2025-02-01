@@ -129,3 +129,19 @@ button[type="submit"] {
   border-radius: 4px;
   cursor: pointer;
 }
+
+[x-cloak] {
+  display: none !important;
+}
+
+/* transitions */
+.modal {
+  transition: all ease-in 300ms;
+  transition-delay: 300ms;
+}
+.modal.on-screen {
+  transform: translateY(0);
+}
+.modal.off-screen {
+  transform: translateY(-100vh);
+}

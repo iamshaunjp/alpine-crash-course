@@ -65,11 +65,9 @@
       <label>Belt Color:
         <select x-model="belt">
           <option value="">Select a belt</option>
-          <option value="black">Black</option>
-          <option value="white">White</option>
-          <option value="red">Red</option>
-          <option value="orange">Orange</option>
-          <option value="brown">Brown</option>
+          <template x-for="(choice, index) in beltChoices" :key="choice">
+            <option :value="choice" x-text="choice"></option>
+          </template>
         </select>
       </label>
 
@@ -104,6 +102,18 @@
 
     <!-- submit button -->
     <button type="submit">Submit</button>
+
+    <div x-show="success" class="overlay" x-cloak
+      x-transition.opacity.duration.500ms
+    >
+      <div class="modal" x-show="success"
+        x-transition:enter-start="off-screen"
+        x-transition:enter-end="on-screen"
+      >
+        <h2>Thank you!</h2>
+        <button type="button" @click="success = false">Close</button>
+      </div>
+    </div>
   </form>
 
 </body>

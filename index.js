@@ -8,6 +8,8 @@ document.addEventListener('alpine:init', () => {
     newsletter: true,
     showPass: false,
     errors: {},
+    beltChoices: ['black', 'white', 'red', 'orange', 'brown'],
+    success: false,
 
     validateForm() {
       this.errors = {}
@@ -27,6 +29,7 @@ document.addEventListener('alpine:init', () => {
       if (this.bio.length < 10) {
         this.errors.bio = 'Bio must be at least 10 characters.'
       }
+
     },
 
     submitForm($event) {
@@ -36,6 +39,8 @@ document.addEventListener('alpine:init', () => {
         console.log(this.username, this.password, this.belt, this.bio, this.newsletter)
 
         $event.target.reset()
+
+        this.success = true
       }
     }
   }))
